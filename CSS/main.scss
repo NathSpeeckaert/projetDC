@@ -1,0 +1,119 @@
+$primary-color: #26402d;
+$secondary-color: #b6cabb;
+$tertiary-color: #d9d3b8;
+
+@mixin borders{
+    border: solid 1px $primary-color;
+    border-radius: 0.20em;
+    margin: 5px;
+    padding: 5px;
+}
+
+@mixin flexbox {
+    @include borders;
+    display: flex;
+    justify-content: space-between;
+    margin:auto;
+    margin-bottom: 5px;
+}
+
+*{
+    font-family: century gothic, Helvetica, sans-serif;
+}
+
+body {
+    background-image: linear-gradient($primary-color, $secondary-color);
+    margin: auto;  
+}
+h1, h2, h3 {
+    color: $primary-color;
+    font-weight: bold;
+}
+.page-container{
+    @include flexbox();
+    width:95%;
+    flex-direction: column;
+}
+
+.header-container, .menu-container, .main-container, .footer-container {
+    @include flexbox();
+    flex-direction: row;
+    width: 90%;
+    background-color: $secondary-color;
+}
+
+.header-container{
+    background:url("../images/header.jpg") center center;
+    background-size: cover;
+        
+    .en-tete{
+        width:75%;
+        align-self: center;
+        font-size: 3em;
+        font-weight: bold;
+        font-style:italic;
+        color: $primary-color;
+    }
+}
+
+.menu-container{
+    .menu{
+        width: 30%;
+        align-self:stretch ;
+        @include borders;
+        
+        text-align: center;
+            a {
+                display:block;
+                text-decoration: none;
+                color: $primary-color;
+                font-weight: bold;
+                &:hover {
+                    background-color: $tertiary-color;
+                }
+            }        
+       
+    }
+}
+
+.main-container {
+    .section-container {
+        background-color: $tertiary-color;
+        width : 75%;
+        @include borders;
+        article {
+            padding: 10px;
+        }
+    
+    }    
+        
+    .aside-container {
+        background-color: $tertiary-color;
+        width: 25%;
+        @include borders;
+        padding: 10px;
+    }
+}
+
+.footer-container{
+    .socialmedia-container{
+        @include borders;
+        width: 50%;              
+        align-self: flex-end;
+    }    
+
+    .address-container {
+        @include borders;
+        width: 50%;
+        p {
+            text-align: center;
+        }
+    }
+}
+
+
+
+
+
+
+
