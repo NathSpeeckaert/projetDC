@@ -4,9 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Projet</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <h1>Contact</h1>
+    <div class="page-container">
+        <header class="header-container">
+            <div class="logo">
+                <a href="main.html"> <img src="images/CM_logo.png" alt="logo" class="opacity"> </a>
+            </div>
+            <div class="en-tete">
+                <p>Prenez soin de vous au naturel</p>
+            </div>         
+        </header>
+
+        <nav class = menu-container>
+            <div class="menu"><a href="accueil.html">Accueil</a></div>
+            <div class="menu"><a href="recettes.html">Recettes</a></div>
+            <div class="menu"> <a href="contact.html">Contact</a></div>
+        </nav>
+
+        <main class="main-container">
+            <section class="section-container">
+                <p>Vous souhaitez nous contacter ?<br/>Utiliser le formulaire ci-dessous</p>
+                <form method="post" action="contact.php">
+                    <p>
+                        <label for="name">Votre nom:</label><br />
+                        <input type="text" name="nom" id="name" class="flash" /><br />
+                        
+                        <label for="mail">Votre e-mail:</label><br />
+                        <input type="text" name="mail" id="mail" class="flash" /><br />
+                    </p>
+                    
+                    <p>Tranche d'âge:
+                        <select name="trancheAge">
+                            <option value="option1">moins de 20 ans</option>
+                            <option value="option2">de 21 à 40 ans</option>
+                            <option value="option3">de 41 à 60 ans</option>
+                            <option value="option3">plus de 60 ans</option>
+                        </select>	
+                    </p>
+                    
+                    <p>
+                        <input type="checkbox" name="newsletter" id="newsletter"/>
+                        <label for="newsletter">Je souhaite m'abonner à la newsletter</label>
+                    </p>
+                        Choisissez la fréquence de réception de la newsletter <br/>
+                        <input type="radio" name="frequence" id="daily" value="quotidienne"/>
+                        <label for="daily">Quotidienne</label>
+                        <input type="radio" name="frequence" id="weekly" value="hebdomadaire"/>
+                        <label for="weekly">Hebdomadaire</label>
+                    <p>
+                        <label for="message">Votre message:</label><br/>
+                        <textarea name="message" id="message" class="flash" maxlength="200" placeholder="Maximum 200 caractères" cols="50" rows="4" ></textarea>
+                    </p>
+
+                    <p>
+                        <input type="submit" value="Valider"/> <input type="reset" value="Effacer" />
+                    </p>
+
+                </form>
+                
+            </section>
+            <aside class="aside-container">
+                <h3>Les dernières recettes</h3>
+                <ul>
+                    <li><a href="recettes.html#art01">Soin coup de soleil</a></li>
+                    <li><a href="recettes.html#art02">Soin pour pieds secs</a></li>				
+                    <li><a href="recettes.html#art03">Masque purifiant</a></li>
+                    <li><a href="recettes.html#art04">Gommage visage</a></li>
+                    <li><a href="recettes.html#art05">Soin pointes sèches</a></li>
+                    <li><a href="recettes.html#art06">Shampooing sec</a></li>			
+
+                </ul>
+            </aside>
+        </main>
+
+        <footer class="footer-container">
+            <div class="socialmedia-container">
+                <a href="http://facebook.com"><img src="images/fb.png" alt="logo facebook"></a>
+                <a href="http://instagram.com"><img src="images/insta.png" alt="logo instagram"></a>
+            </div>
+            <address class="address-container">
+                <p>Cosméto maison<br/>Rue des fleurs, 12<br/>2222 Le Jardin<br/></p>
+            </address>        
+        </footer>
+    </div>    
 </body>
 </html>

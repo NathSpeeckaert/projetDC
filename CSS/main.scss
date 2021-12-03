@@ -43,7 +43,7 @@ h1, h2, h3 {
 }
 
 .header-container{
-    background:url("../images/header.jpg") center center;
+    background-image:url("../images/header.jpg") center center;
     background-size: cover;
         
     .en-tete{
@@ -83,8 +83,16 @@ h1, h2, h3 {
         @include borders;
         article {
             padding: 10px;
+            p{
+                text-align: justify;
+            }
         }
-    
+        h1 {
+            font-size: 2em;
+        }
+        h2 {
+            font-size: 1.5em;
+        }       
     }    
         
     .aside-container {
@@ -92,8 +100,27 @@ h1, h2, h3 {
         width: 25%;
         @include borders;
         padding: 10px;
-    }
-}
+             
+        ul {
+             list-style-type:none;
+             list-style-image: url(../images/rose.png);
+             padding-left: 20px;
+             margin:auto;        
+             a {
+                 text-decoration: none;
+                 color: $primary-color;
+                 &:hover {
+                    background-color: $secondary-color;                 
+
+                 }
+             }
+               
+
+             }
+        }
+
+        }    
+ 
 
 .footer-container{
     .socialmedia-container{

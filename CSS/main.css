@@ -106,6 +106,18 @@ h1, h2, h3 {
   padding: 10px;
 }
 
+.main-container .section-container article p {
+  text-align: justify;
+}
+
+.main-container .section-container h1 {
+  font-size: 2em;
+}
+
+.main-container .section-container h2 {
+  font-size: 1.5em;
+}
+
 .main-container .aside-container {
   background-color: #d9d3b8;
   width: 25%;
@@ -114,6 +126,22 @@ h1, h2, h3 {
   margin: 5px;
   padding: 5px;
   padding: 10px;
+}
+
+.main-container .aside-container ul {
+  list-style-type: none;
+  list-style-image: url(../images/rose.png);
+  padding-left: 20px;
+  margin: auto;
+}
+
+.main-container .aside-container ul a {
+  text-decoration: none;
+  color: #26402d;
+}
+
+.main-container .aside-container ul a:hover {
+  background-color: #b6cabb;
 }
 
 .footer-container .socialmedia-container {
