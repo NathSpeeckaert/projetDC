@@ -1,12 +1,14 @@
 $primary-color: #26402d;
 $secondary-color: #b6cabb;
 $tertiary-color: #d9d3b8;
+$intermediate-color: #ffe6ff;
+
 
 @mixin borders{
-    border: solid 1px $primary-color;
+    border: solid 0.0625em $primary-color;
     border-radius: 0.20em;
-    margin: 5px;
-    padding: 5px;
+    margin: 0.3125em;
+    padding: 0.3125em;
 }
 
 @mixin flexbox {
@@ -14,7 +16,7 @@ $tertiary-color: #d9d3b8;
     display: flex;
     justify-content: space-between;
     margin:auto;
-    margin-bottom: 5px;
+    margin-bottom:0.3125em;
 }
 
 *{
@@ -22,7 +24,7 @@ $tertiary-color: #d9d3b8;
 }
 
 body {
-    background-image: linear-gradient($primary-color, $secondary-color);
+    background-image: linear-gradient($primary-color, $secondary-color, $intermediate-color, $secondary-color, $primary-color);
     margin: auto;  
 }
 h1, h2, h3 {
@@ -35,7 +37,7 @@ h1, h2, h3 {
     flex-direction: column;
 }
 
-.header-container, .menu-container, .main-container, .footer-container {
+.header-container, .menu-container, .main-container, .test, .footer-container {
     @include flexbox();
     flex-direction: row;
     width: 90%;
@@ -43,24 +45,34 @@ h1, h2, h3 {
 }
 
 .header-container{
-    background-image:url("../images/header.jpg") center center;
+    
+    background :url("../images/header.jpg") center center;
     background-size: cover;
-        
-    .en-tete{
-        width:75%;
-        align-self: center;
-        font-size: 3em;
-        font-weight: bold;
-        font-style:italic;
-        color: $primary-color;
-    }
-}
+    .test{
 
-.menu-container{
+        width: 100%;
+        background-color: rgba(255,255,255,0.3);
+    
+        .en-tete{  
+            width:75%;
+            align-self: center;
+            font-size: 3em;
+            font-weight: bold;
+            font-style:italic;
+            color: $primary-color;
+            text-shadow: $secondary-color 4px 4px;
+                
+            }
+    }
+}    
+
+.menu-container{    
     .menu{
         width: 30%;
         align-self:stretch ;
         @include borders;
+        background-color: $tertiary-color;
+
         
         text-align: center;
             a {
@@ -82,7 +94,7 @@ h1, h2, h3 {
         width : 75%;
         @include borders;
         article {
-            padding: 10px;
+            padding: 0.625em;
             p{
                 text-align: justify;
             }
@@ -99,12 +111,12 @@ h1, h2, h3 {
         background-color: $tertiary-color;
         width: 25%;
         @include borders;
-        padding: 10px;
+        padding: 0.625em;
              
         ul {
              list-style-type:none;
              list-style-image: url(../images/rose.png);
-             padding-left: 20px;
+             padding-left: 1,25em;
              margin:auto;        
              a {
                  text-decoration: none;
@@ -123,24 +135,172 @@ h1, h2, h3 {
  
 
 .footer-container{
-    .socialmedia-container{
-        @include borders;
-        width: 50%;              
-        align-self: flex-end;
-    }    
-
+    flex-direction: column;
+    width: 90%;
+   
     .address-container {
         @include borders;
-        width: 50%;
+        flex-direction: column;
+        background-color: $tertiary-color;
         p {
-            text-align: center;
+            color: $primary-color;
+           text-align: center;
         }
+        .socialmedia-container {
+            text-align: center;
+
+        }
+   
     }
 }
+//
+// Media Queries
+//
+
+@media screen and (max-width:768px) {
+
+    @mixin borders{
+        border: solid 0.0625em $primary-color;
+        border-radius: 0.20em;
+        margin: 0.0625em;
+        padding: 0.0625em;
+    }
+    
+    @mixin flexbox {
+       /*  @include borders;
+        display: flex; */
+        justify-content: space-around;
+        margin:auto;
+        margin-bottom: 0.125em;
+        flex-direction: column;
+    }
+    
+    body {
+        background-image: linear-gradient($primary-color, $secondary-color, $intermediate-color, $secondary-color, $primary-color);
+        margin: auto;  
+    }
+    h1, h2, h3 {
+        color: $primary-color;
+        font-weight: bold;
+        margin-top: 0.125em;
+    }
+    .page-container{
+        @include flexbox();
+        width:98%;
+
+        
+    }
+    
+    .header-container, .menu-container, .main-container, .test, .footer-container {
+        @include flexbox();
+        width: 95%;
+        background-color: $secondary-color;
+        }
+    
+    .header-container{
+        
+        background :url("../images/header.jpg") center center;
+        background-size: cover;
+        .test{
+    
+            width: 100%;
+            background-color: rgba(255,255,255,0.3);
+            .logo{
+                align-self: center;
+            }
+        
+            .en-tete{  
+                // align-self: center;
+                font-size: 2em;
+                /* font-weight: bold;
+                font-style:italic;
+                color: $primary-color; */
+                  
+                p{
+                    margin: 0.125em;
+                    text-shadow: $secondary-color 0.125em 0.125em;
+                    text-align: center;
+                }
+                
+                }
+        }
+    }    
+    
+    .menu-container{  
+        flex-direction: row;  
+        .menu{           
+            a {
+                   font-size: 1.5em;
+                }        
+           
+        }
+    }
+    
+    .main-container {
+        .section-container {
+            // background-color: $tertiary-color;
+            width :100%;
+            // @include borders;
+            article {
+                padding: 0.625em;
+                p{
+                    text-align: justify;
+                }
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1em;
+            }       
+        }    
+            
+        .aside-container {
+            background-color: $tertiary-color;
+            width: 25%;
+            @include borders;
+            padding: 0.625em;
+                 
+            ul {
+                 list-style-type:none;
+                 list-style-image: url(../images/rose.png);
+                 padding-left: 1,25em;
+                 margin:auto;        
+                 a {
+                     text-decoration: none;
+                     color: $primary-color;
+                     &:hover {
+                        background-color: $secondary-color;                 
+    
+                     }
+                 }
+                   
+    
+                 }
+            }
+    
+            }    
+     
+    
+    .footer-container{
+        flex-direction: column;
+        width: 90%;
+       
+        .address-container {
+            @include borders;
+            flex-direction: column;
+            background-color: $tertiary-color;
+            p {
+                color: $primary-color;
+               text-align: center;
+            }
+            .socialmedia-container {
+                text-align: center;
+    
+            }
+       
+        }
+    }
 
 
-
-
-
-
-
+}
