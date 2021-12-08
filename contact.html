@@ -28,42 +28,42 @@
 
         <main class="main-container">
             <section class="section-container">
-                <p>Vous souhaitez nous contacter ?<br/>Utiliser le formulaire ci-dessous</p>
+                <p style="text-align: center;">Vous souhaitez nous contacter ? Utilisez le formulaire ci-dessous</p>
                 <form method="post" action="contact.php">
-                    <p>
-                        <label for="name">Votre nom:</label><br />
-                        <input type="text" name="nom" id="name" class="flash" /><br />
-                        
-                        <label for="mail">Votre e-mail:</label><br />
-                        <input type="text" name="mail" id="mail" class="flash" /><br />
-                    </p>
-                    
-                    <p>Tranche d'âge:
+                <div class="identity">
+                    <label for="name">Votre nom:</label>
+                    <input type="text" name="nom" id="name">
+                    <label for="firstname">Votre prénom:</label>
+                    <input type="text" name="prenom" id="firstname" />
+                    <label for="mail">Votre e-mail:</label>
+                    <input type="email" name="mail" id="mail" />
+               
+                <div class="age">
+                        <label for ="trancheAge">Votre tranche d'âge:</label>  
                         <select name="trancheAge">
-                            <option value="option1">moins de 20 ans</option>
-                            <option value="option2">de 21 à 40 ans</option>
-                            <option value="option3">de 41 à 60 ans</option>
-                            <option value="option3">plus de 60 ans</option>
-                        </select>	
-                    </p>
-                    
-                    <p>
-                        <input type="checkbox" name="newsletter" id="newsletter"/>
-                        <label for="newsletter">Je souhaite m'abonner à la newsletter</label>
-                    </p>
-                        Choisissez la fréquence de réception de la newsletter <br/>
+                        <option value="option1">moins de 20 ans</option>
+                        <option value="option2">de 21 à 40 ans</option>
+                        <option value="option3">de 41 à 60 ans</option>
+                        <option value="option4">plus de 60 ans</option>
+                        </select>
+                </div>
+                <div class="newsletter">
+                     
+                        <input type="checkbox" name="newsletter" id="newsletter"/> <label for="newsletter">Je souhaite m'abonner à la newsletter</label>
+                        <p>
+                        Choisissez la fréquence de réception de la newsletter </p>
                         <input type="radio" name="frequence" id="daily" value="quotidienne"/>
                         <label for="daily">Quotidienne</label>
                         <input type="radio" name="frequence" id="weekly" value="hebdomadaire"/>
                         <label for="weekly">Hebdomadaire</label>
-                    <p>
-                        <label for="message">Votre message:</label><br/>
-                        <textarea name="message" id="message" class="flash" maxlength="200" placeholder="Maximum 200 caractères" cols="50" rows="4" ></textarea>
-                    </p>
-
-                    <p>
+                </div>        
+                <div class="message">  
+                        <label for="message">Votre message:</label>
+                        <textarea name="message" id="message" maxlength="200" placeholder="Maximum 200 caractères" cols="50" rows="4" ></textarea>
+                </div>    
+                    <div class=button>
                         <input type="submit" value="Valider"/> <input type="reset" value="Effacer" />
-                    </p>
+                    </div>
 
                 </form>
                 
